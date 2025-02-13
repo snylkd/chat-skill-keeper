@@ -73,38 +73,42 @@ const Index = () => {
   };
 
   return (
-    <div className="flex h-screen bg-background">
-      <aside className="w-80 border-r">
-        <ConversationList
-          conversations={conversations}
-          activeConversationId={activeConversationId}
-          onSelect={setActiveConversationId}
-          onNew={handleNewConversation}
-        />
-      </aside>
-      <main className="flex flex-1 flex-col">
-        {activeConversation ? (
-          <>
-            <ScrollArea className="flex-1 p-4">
-              <div className="flex flex-col gap-4">
-                {activeConversation.messages.map((message) => (
-                  <ChatMessage key={message.id} message={message} />
-                ))}
+    <div className="min-h-screen bg-background p-4 md:p-8">
+      <div className="mx-auto max-w-6xl rounded-lg border shadow-lg bg-white">
+        <div className="flex h-[800px]">
+          <aside className="w-80 border-r">
+            <ConversationList
+              conversations={conversations}
+              activeConversationId={activeConversationId}
+              onSelect={setActiveConversationId}
+              onNew={handleNewConversation}
+            />
+          </aside>
+          <main className="flex flex-1 flex-col">
+            {activeConversation ? (
+              <>
+                <ScrollArea className="flex-1 p-4">
+                  <div className="flex flex-col gap-4">
+                    {activeConversation.messages.map((message) => (
+                      <ChatMessage key={message.id} message={message} />
+                    ))}
+                  </div>
+                </ScrollArea>
+                <ChatInput onSend={handleSendMessage} />
+              </>
+            ) : (
+              <div className="flex flex-1 items-center justify-center">
+                <div className="text-center">
+                  <h2 className="text-2xl font-semibold mb-2">Bienvenue dans l'IA Assistant de Compétences</h2>
+                  <p className="text-muted-foreground">
+                    Commencez une nouvelle conversation pour découvrir vos compétences
+                  </p>
+                </div>
               </div>
-            </ScrollArea>
-            <ChatInput onSend={handleSendMessage} />
-          </>
-        ) : (
-          <div className="flex flex-1 items-center justify-center">
-            <div className="text-center">
-              <h2 className="text-2xl font-semibold mb-2">Bienvenue dans l'IA Assistant de Compétences</h2>
-              <p className="text-muted-foreground">
-                Commencez une nouvelle conversation pour découvrir vos compétences
-              </p>
-            </div>
-          </div>
-        )}
-      </main>
+            )}
+          </main>
+        </div>
+      </div>
     </div>
   );
 };
