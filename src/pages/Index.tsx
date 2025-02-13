@@ -75,7 +75,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background p-4 md:p-8">
       <div className="mx-auto max-w-6xl rounded-lg border shadow-lg bg-white">
-        <div className="flex h-[800px]">
+        <div className="flex h-[600px]"> {/* Hauteur réduite de 800px à 600px */}
           <aside className="w-80 border-r">
             <ConversationList
               conversations={conversations}
