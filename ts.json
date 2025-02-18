@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "es5", // Le code généré sera compatible avec ES5 pour une meilleure compatibilité.
+    "lib": ["dom", "dom.iterable", "esnext"], // Ces bibliothèques sont nécessaires pour les fonctionnalités modernes de JavaScript et React.
+    "allowJs": true, // Autorise les fichiers JavaScript dans le projet.
+    "skipLibCheck": true, // Ignore les vérifications de type dans les fichiers de type des dépendances.
+    "esModuleInterop": true, // Permet d'importer des modules CommonJS de manière plus simple.
+    "strict": true, // Active toutes les vérifications strictes de TypeScript pour améliorer la sécurité des types.
+    "forceConsistentCasingInFileNames": true, // Assure une cohérence dans les noms de fichiers (utile sur des systèmes de fichiers sensibles à la casse).
+    "module": "esnext", // Utilisation de modules ES modernes.
+    "moduleResolution": "node", // Permet la résolution de modules comme dans Node.js.
+    "resolveJsonModule": true, // Permet d'importer des fichiers JSON comme des modules.
+    "jsx": "react-jsx", // Définit la transformation JSX pour React 17 ou plus.
+    "noEmit": true // Ne génère pas de fichiers de sortie, c'est utile dans un projet React où le bundler (comme Webpack ou Vite) gère l'émission des fichiers.
+  },
+  "include": [
+    "src" // Indique où TypeScript doit chercher les fichiers à compiler. Ici, tous les fichiers dans le dossier `src`.
+  ],
+  "exclude": [
+    "node_modules" // Exclut le dossier `node_modules` du processus de compilation.
+  ]
+}
