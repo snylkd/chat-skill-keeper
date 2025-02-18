@@ -1,0 +1,52 @@
+/* src/index.css */
+
+/* Base styles for the chatbot */
+body {
+  font-family: Arial, sans-serif;
+}
+
+.chat-input-form {
+  display: flex;
+  flex-direction: column;
+}
+
+textarea {
+  resize: none;
+  padding: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  height: 50px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: #ccc;
+}
+
+.message {
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.message.user {
+  background-color: #f1f1f1;
+}
+
+.message.assistant {
+  background-color: #e9f7e1;
+}
+
+.active {
+  font-weight: bold;
+}
