@@ -1,0 +1,166 @@
+/* index.css */
+
+/* Utilisation de Tailwind pour un fond de base */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f4f8;
+  margin: 0;
+  padding: 0;
+}
+
+/* Conteneur principal */
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+}
+
+/* Conteneur du chat */
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1200px;
+  height: 80vh;
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Section des conversations (à gauche) */
+.conversations-section {
+  display: flex;
+  flex-direction: column;
+  width: 280px;
+  border-right: 2px solid #e0e0e0;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+/* Style pour chaque élément de la conversation */
+.conversation-item {
+  padding: 10px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.conversation-item:hover {
+  background-color: #f1f1f1;
+}
+
+.active-conversation {
+  background-color: #009688;
+  color: white;
+  font-weight: bold;
+}
+
+/* Section de la discussion (à droite) */
+.messages-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+/* Message de l'utilisateur */
+.user-message {
+  align-self: flex-end;
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  max-width: 70%;
+}
+
+/* Message de l'assistant */
+.assistant-message {
+  align-self: flex-start;
+  background-color: #e0f7fa;
+  color: #00796b;
+  padding: 10px 20px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  max-width: 70%;
+}
+
+/* Barre de saisie */
+.input-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #ffffff;
+  border-top: 2px solid #e0e0e0;
+  position: sticky;
+  bottom: 0;
+  z-index: 1;
+}
+
+/* Champ de texte pour le message */
+textarea {
+  width: 80%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  resize: none;
+  font-size: 14px;
+  height: 50px;
+  box-sizing: border-box;
+  background-color: #f9f9f9;
+}
+
+textarea:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+/* Bouton d'envoi */
+.send-button {
+  background-color: #007bff;
+  color: white;
+  padding: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  transition: background-color 0.3s;
+}
+
+.send-button:hover {
+  background-color: #0056b3;
+}
+
+.send-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Liste des conversations */
+.new-conversation-button {
+  background-color: #4caf50;
+  color: white;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.new-conversation-button:hover {
+  background-color: #388e3c;
+}
+
+.new-conversation-button:disabled {
+  background-color: #bdbdbd;
+  cursor: not-allowed;
+}
+
